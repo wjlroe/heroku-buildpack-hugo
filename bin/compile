@@ -24,8 +24,6 @@ else
   export HUGO_VERSION=$DEFAULT_HUGO_VERSION
 fi
 
-env
-
 # Hugo URL ( download from GH builds )
 RELEASE_NAME=hugo_${HUGO_VERSION}_Linux-64bit
 FILE_NAME=${RELEASE_NAME}.tar.gz
@@ -53,7 +51,7 @@ if [ -e $BUILD_DIR/.hugotheme ]; then
 fi
 
 # Build the site
-echo "\n-----> Building the site"
+echo "\n-----> Building the site with ${HUGO_OPTIONS}"
 cd $BUILD_DIR
 mkdir -p static | indent
 ./hugo $HUGO_OPTIONS | indent
